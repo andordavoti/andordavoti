@@ -7,7 +7,6 @@ import {
   Grid,
   Box,
   Button,
-  useTheme,
   ButtonGroup,
 } from "@mui/material";
 import { AnimateSharedLayout, motion } from "framer-motion";
@@ -15,10 +14,8 @@ import projects, { ProjectCategory } from "../lib/projects";
 import ProjectItem from "./ProjectItem";
 
 const Projects: React.FC = () => {
-  const theme = useTheme();
-
-  const [activeCategory, setActiveCategory] = useState<"all" | ProjectCategory>(
-    "all"
+  const [activeCategory, setActiveCategory] = useState<"All" | ProjectCategory>(
+    "All"
   );
   const [activeProjects, setActiveProjects] = useState(projects);
 
@@ -26,8 +23,8 @@ const Projects: React.FC = () => {
     filterProjects(activeCategory);
   }, [activeCategory]);
 
-  const filterProjects = (category: "all" | ProjectCategory) => {
-    if (category === "all") {
+  const filterProjects = (category: "All" | ProjectCategory) => {
+    if (category === "All") {
       setActiveProjects(projects);
     } else {
       const filteredProjects = projects.filter((project) =>
@@ -37,12 +34,12 @@ const Projects: React.FC = () => {
     }
   };
 
-  const categories: ("all" | ProjectCategory)[] = [
-    "all",
-    "native",
-    "web",
-    "full stack",
-    "hardware",
+  const categories: ("All" | ProjectCategory)[] = [
+    "All",
+    "Native",
+    "Web",
+    "Full Stack",
+    "Hardware",
   ];
 
   return (
@@ -72,14 +69,10 @@ const Projects: React.FC = () => {
       >
         {categories.map((category, index) => (
           <Button
+            variant={category === activeCategory ? "contained" : "outlined"}
             key={index}
             onClick={() => setActiveCategory(category)}
-            style={{
-              color:
-                category === activeCategory
-                  ? theme.palette.text.primary
-                  : theme.palette.text.secondary,
-            }}
+            style={{ textTransform: "none" }}
           >
             {category}
           </Button>
