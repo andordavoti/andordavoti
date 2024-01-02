@@ -59,7 +59,7 @@ const Projects: React.FC = () => {
         Projects
       </Typography>
 
-      <Box m="1rem" />
+      <Box m="0.5rem" />
 
       <ButtonGroup
         style={{ flexWrap: "wrap", justifyContent: "center" }}
