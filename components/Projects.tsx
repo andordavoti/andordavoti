@@ -9,7 +9,7 @@ import {
   Button,
   ButtonGroup,
 } from "@mui/material";
-import { AnimateSharedLayout, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import projects, { ProjectCategory } from "../lib/projects";
 import ProjectItem from "./ProjectItem";
 
