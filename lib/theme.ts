@@ -13,7 +13,7 @@ const palette: PaletteOptions = {
   },
   background: {
     default: "#1c1c1c",
-    paper: "#242526",
+    paper: "#1c1c1c",
   },
 };
 

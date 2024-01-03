@@ -225,7 +225,7 @@ const projects: Project[] = [
     webAppUrl: null,
     links: [
       {
-        name: "Github repo",
+        name: "GitHub repo",
         link: "https://github.com/andordavoti/cruiseaholic",
       },
     ],
@@ -292,7 +292,8 @@ const projects: Project[] = [
     date: "2020 - Present",
     subtitle: "This website.",
     description: [
-      "One central place for all of my past and present projects. The website is built with Typescript, React and Material UI. The project is using Preact in production to keep the bundle size small.",
+      "One central place for all of my past and present projects. The first version of this website was built with Typescript, React and Material UI. The project was then utilizing Preact in production to keep the bundle size small.",
+      "Since then it's been rewritten with Next.js and React. The website is hosted on Vercel, and the source code is available on GitHub.",
     ],
     categories: ["Web"],
     imgUrl: "/img/projects/personal-website.jpg",
@@ -305,7 +306,11 @@ const projects: Project[] = [
         link: "https://andordavoti.com/",
       },
       {
-        name: "Github repo",
+        name: "New GitHub repo",
+        link: "https://github.com/andordavoti/andordavoti",
+      },
+      {
+        name: "Old GitHub repo",
         link: "https://github.com/andordavoti/personal-website",
       },
     ],
@@ -314,7 +319,10 @@ const projects: Project[] = [
         name: "React",
         link: "https://reactjs.org/",
       },
-
+      {
+        name: "Next.js",
+        link: "https://nextjs.org/",
+      },
       {
         name: "Preact",
         link: "https://preactjs.com/",
@@ -467,7 +475,7 @@ const projects: Project[] = [
     ],
     links: [
       {
-        name: "Github repo",
+        name: "GitHub repo",
         link: "https://github.com/andordavoti/tic-tac-toe-app",
       },
       {

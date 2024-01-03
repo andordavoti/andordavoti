@@ -1,24 +1,9 @@
 "use client";
 
 import { FC } from "react";
-import {
-  Box,
-  Container,
-  Link,
-  Typography,
-  styled,
-  useTheme,
-} from "@mui/material";
+import { Box, Container, Link, Typography, useTheme } from "@mui/material";
 import { Project } from "../lib/projects";
-
-const StoreIcon = styled("img")(({ theme }) => ({
-  width: 250,
-  margin: 10,
-  transition: "all 0.2s ease-in-out",
-  "&:hover": {
-    transform: "scale(1.05)",
-  },
-}));
+import StoreIcon from "./StoreIcon";
 
 interface Props {
   project: Project;
