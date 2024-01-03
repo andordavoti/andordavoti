@@ -38,7 +38,6 @@ const Projects: React.FC = () => {
     "All",
     "Native",
     "Web",
-    "Full Stack",
     "Hardware",
   ];
 
