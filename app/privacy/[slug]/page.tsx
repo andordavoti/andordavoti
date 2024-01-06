@@ -1,14 +1,13 @@
 import projects from "../../../lib/projects";
-import { useMemo } from "react";
-import ProjectDetails from "../../../components/ProjectDetails";
+import { FC, useMemo } from "react";
 import { notFound } from "next/navigation";
 import { Box, Container, Typography } from "@mui/material";
 
-export default function Page({
-  params: { slug },
-}: {
+interface Props {
   params: { slug: string };
-}) {
+}
+
+const Page: FC<Props> = ({ params: { slug } }) => {
   const activeProject = useMemo(
     () => projects.find((project) => project.path === slug),
     [slug]
@@ -103,4 +102,6 @@ export default function Page({
       {renderTerms()}
     </Box>
   );
-}
+};
+
+export default Page;

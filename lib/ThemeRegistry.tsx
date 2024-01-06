@@ -10,7 +10,7 @@ import { theme } from "./theme";
 
 // This implementation is from emotion-js
 // https://github.com/emotion-js/emotion/issues/2928#issuecomment-1319747902
-export default function ThemeRegistry(props) {
+const ThemeRegistry = (props) => {
   const { options, children } = props;
 
   const [{ cache, flush }] = useState(() => {
@@ -61,4 +61,6 @@ export default function ThemeRegistry(props) {
       </ThemeProvider>
     </CacheProvider>
   );
-}
+};
+
+export default ThemeRegistry;

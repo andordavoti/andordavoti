@@ -1,13 +1,13 @@
 import projects from "../../../lib/projects";
-import { useMemo } from "react";
+import { FC, useMemo } from "react";
 import ProjectDetails from "../../../components/ProjectDetails";
 import { notFound } from "next/navigation";
 
-export default function Page({
-  params: { slug },
-}: {
+interface Props {
   params: { slug: string };
-}) {
+}
+
+const Page: FC<Props> = ({ params: { slug } }) => {
   const activeProject = useMemo(
     () => projects.find((project) => project.path === slug),
     [slug]
@@ -18,4 +18,6 @@ export default function Page({
   }
 
   return <ProjectDetails project={activeProject} />;
-}
+};
+
+export default Page;
