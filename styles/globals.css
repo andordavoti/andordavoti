@@ -21,6 +21,14 @@ a {
   outline: none;
 }
 
+.MuiDivider-root {
+  background-color: grey !important;
+}
+
+.MuiListItemText-root {
+  color: #fff !important;
+}
+
 @font-face {
   font-family: "MustangW01-Regular";
   src: local("MustangW01-Regular"), url(/fonts/mustang.ttf) format("truetype");

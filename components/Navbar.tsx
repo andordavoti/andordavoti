@@ -108,10 +108,7 @@ const Navbar: FC = () => {
                         <ListItemIcon>
                           <FaMedium color="#fff" size={ICON_SIZE} />
                         </ListItemIcon>
-                        <ListItemText
-                          primary="Medium"
-                          style={{ color: "#fff" }}
-                        />
+                        <ListItemText primary="Medium" />
                       </ListItemButton>
                     </Link>
 
@@ -124,10 +121,7 @@ const Navbar: FC = () => {
                         <ListItemIcon>
                           <FaGithub color="#fff" size={ICON_SIZE} />
                         </ListItemIcon>
-                        <ListItemText
-                          primary="GitHub"
-                          style={{ color: "#fff" }}
-                        />
+                        <ListItemText primary="GitHub" />
                       </ListItemButton>
                     </Link>
 
@@ -140,10 +134,7 @@ const Navbar: FC = () => {
                         <ListItemIcon>
                           <FaLinkedin color="#fff" size={ICON_SIZE} />
                         </ListItemIcon>
-                        <ListItemText
-                          primary="LinkedIn"
-                          style={{ color: "#fff" }}
-                        />
+                        <ListItemText primary="LinkedIn" />
                       </ListItemButton>
                     </Link>
 
@@ -156,10 +147,7 @@ const Navbar: FC = () => {
                         <ListItemIcon>
                           <MdMailOutline color="#fff" size={ICON_SIZE} />
                         </ListItemIcon>
-                        <ListItemText
-                          primary="Email"
-                          style={{ color: "#fff" }}
-                        />
+                        <ListItemText primary="Email" />
                       </ListItemButton>
                     </Link>
                   </List>
