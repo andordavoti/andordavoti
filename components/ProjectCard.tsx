@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 type Props = Pick<Project, "path" | "date" | "name" | "imgUrl" | "subtitle">;
 
-const ProjectItem: React.FC<Props> = ({
+const ProjectCard: React.FC<Props> = ({
   path,
   name,
   subtitle,
@@ -27,7 +27,7 @@ const ProjectItem: React.FC<Props> = ({
           width: 250,
           height: "auto",
           backgroundColor: "#242526",
-          borderRadius: 10,
+          borderRadius: "1rem",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -76,4 +76,4 @@ const ProjectItem: React.FC<Props> = ({
   );
 };
 
-export default ProjectItem;
+export default ProjectCard;
