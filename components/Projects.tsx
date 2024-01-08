@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion";
 import projects, { ProjectCategory } from "../lib/projects";
-import ProjectItem from "./ProjectItem";
+import ProjectCard from "./ProjectCard";
 
 const Projects: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<"All" | ProjectCategory>(
@@ -71,7 +71,15 @@ const Projects: React.FC = () => {
             variant={category === activeCategory ? "contained" : "outlined"}
             key={index}
             onClick={() => setActiveCategory(category)}
-            style={{ textTransform: "none" }}
+            style={{
+              borderTopLeftRadius: index === 0 ? "1rem" : "0rem",
+              borderBottomLeftRadius: index === 0 ? "1rem" : "0rem",
+              borderTopRightRadius:
+                index === categories.length - 1 ? "1rem" : "0rem",
+              borderBottomRightRadius:
+                index === categories.length - 1 ? "1rem" : "0rem",
+              textTransform: "none",
+            }}
           >
             {category}
           </Button>
@@ -90,7 +98,7 @@ const Projects: React.FC = () => {
         >
           {activeProjects.map(({ path, name, subtitle, date, imgUrl }) => (
             <motion.div layout key={name}>
-              <ProjectItem
+              <ProjectCard
                 path={path}
                 name={name}
                 subtitle={subtitle}
