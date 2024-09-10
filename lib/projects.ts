@@ -573,9 +573,9 @@ const projects: Project[] = [
     path: "fast-rhymes",
     date: "2019 - Present",
     name: "Fast Rhymes",
-    subtitle: "Tri-platform iOS, Android and web rhyme lyrics writing app.",
+    subtitle: "Tri-platform iOS, Android and web songwriting app.",
     description: [
-      "Tri-platform mobile (iOS, Android and web) lyrics writing app,built using React Native, React Native for Web, Redux, Expo, and Firebase. Find words that rhyme, associations, words with similar meaning, words with similar spelling, definitions, etc. You can sort search results by syllables or sort by the most relevant words.",
+      "Tri-platform mobile (iOS, Android and web) songwriting app, built using React Native, React Native for Web, Redux, Expo, and Firebase. Find words that rhyme, associations, words with similar meaning, words with similar spelling, definitions, etc. You can sort search results by syllables or sort by the most relevant words.",
       "With an integrated lyrics editor, you can swipe between search and the lyrics you are working on. It was built to be fast and convenient, with a minimalist design to not be in the way of the artists' creative process.",
     ],
     categories: ["Native", "Web"],
@@ -588,6 +588,18 @@ const projects: Project[] = [
       {
         name: "Landing Page",
         link: "https://fastrhymes.com/",
+      },
+      {
+        name: "ProductHunt",
+        link: "https://www.producthunt.com/products/fast-rhymes",
+      },
+      {
+        name: "Kode24.no Article",
+        link: "https://www.kode24.no/artikkel/plutselig-tok-andors-app-av-pa-app-store-jeg-tjener-litt-pa-den/81860727",
+      },
+      {
+        name: "Koncertbooking.com Article",
+        link: "https://koncertbooking.com/blog/olyan-eszkozt-akartunk-letrehozni-ami-inspiral-es-segit-tobb-zene-letrehozasaban-davoti-andorral-a-fast-rhymes-letrehozojaval-beszelgettunk",
       },
     ],
     technologies: [
