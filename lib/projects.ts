@@ -601,6 +601,10 @@ const projects: Project[] = [
         name: "Koncertbooking.com Article",
         link: "https://koncertbooking.com/blog/olyan-eszkozt-akartunk-letrehozni-ami-inspiral-es-segit-tobb-zene-letrehozasaban-davoti-andorral-a-fast-rhymes-letrehozojaval-beszelgettunk",
       },
+      {
+        name: "Paywall review by Nikita Maidanov",
+        link: "https://paywall.tips/fast-rhymes/",
+      },
     ],
     technologies: [
       {
