@@ -237,6 +237,59 @@ const projects: Project[] = [
     technologies: null,
   },
   {
+    path: "personal-website",
+    name: "Personal Website",
+    date: "2020 - Present",
+    subtitle: "This website.",
+    description: [
+      "One central place for all of my past and present projects. The first version of this website was built with Typescript, React and Material UI. The project was then utilizing Preact in production to keep the bundle size small.",
+      "Since then it's been rewritten with Next.js and React. The website is hosted on Vercel, and the source code is available on GitHub.",
+    ],
+    categories: ["Web"],
+    imgUrl: "/img/projects/personal-website.jpg",
+    appStoreUrl: null,
+    playStoreUrl: null,
+    webAppUrl: null,
+    links: [
+      {
+        name: "Website URL",
+        link: "https://andordavoti.com/",
+      },
+      {
+        name: "New GitHub repo",
+        link: "https://github.com/andordavoti/andordavoti",
+      },
+      {
+        name: "Old GitHub repo",
+        link: "https://github.com/andordavoti/personal-website",
+      },
+    ],
+    technologies: [
+      {
+        name: "React",
+        link: "https://reactjs.org/",
+      },
+      {
+        name: "Next.js",
+        link: "https://nextjs.org/",
+      },
+      {
+        name: "Preact",
+        link: "https://preactjs.com/",
+      },
+
+      {
+        name: "Typescript",
+        link: "https://www.typescriptlang.org/",
+      },
+
+      {
+        name: "Material UI",
+        link: "https://material-ui.com/",
+      },
+    ],
+  },
+  {
     path: "smart-water-control",
     date: "2022",
     name: "Smart Water Control",
@@ -312,59 +365,6 @@ const projects: Project[] = [
       {
         name: "GitHub Actions",
         link: "https://github.com/features/actions",
-      },
-    ],
-  },
-  {
-    path: "personal-website",
-    name: "Personal Website",
-    date: "2020 - Present",
-    subtitle: "This website.",
-    description: [
-      "One central place for all of my past and present projects. The first version of this website was built with Typescript, React and Material UI. The project was then utilizing Preact in production to keep the bundle size small.",
-      "Since then it's been rewritten with Next.js and React. The website is hosted on Vercel, and the source code is available on GitHub.",
-    ],
-    categories: ["Web"],
-    imgUrl: "/img/projects/personal-website.jpg",
-    appStoreUrl: null,
-    playStoreUrl: null,
-    webAppUrl: null,
-    links: [
-      {
-        name: "Website URL",
-        link: "https://andordavoti.com/",
-      },
-      {
-        name: "New GitHub repo",
-        link: "https://github.com/andordavoti/andordavoti",
-      },
-      {
-        name: "Old GitHub repo",
-        link: "https://github.com/andordavoti/personal-website",
-      },
-    ],
-    technologies: [
-      {
-        name: "React",
-        link: "https://reactjs.org/",
-      },
-      {
-        name: "Next.js",
-        link: "https://nextjs.org/",
-      },
-      {
-        name: "Preact",
-        link: "https://preactjs.com/",
-      },
-
-      {
-        name: "Typescript",
-        link: "https://www.typescriptlang.org/",
-      },
-
-      {
-        name: "Material UI",
-        link: "https://material-ui.com/",
       },
     ],
   },
