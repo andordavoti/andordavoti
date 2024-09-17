@@ -126,33 +126,6 @@ const projects: Project[] = [
         link: "https://github.com/features/actions",
       },
     ],
-    terms: [
-      {
-        title: "",
-        content:
-          'Please read these terms of service ("terms", "terms of service") carefully before using the Fast Rhymes mobile and web app (the "service") is operated by Andor Davoti (“I”, "me").',
-      },
-      {
-        title: "Conditions of Use",
-        content:
-          "I will provide their services to you, which are subject to the conditions stated below in this document. Every time you visit this app, use its services, or make a purchase, you accept the following conditions. This is why I urge you to read them carefully.",
-      },
-      {
-        title: "Communications",
-        content:
-          "All communication with me is electronic. Every time you send me an email or visit the website or the app, you are going to be communicating with me. You hereby consent to receive communications from me. You also agree that all notices, disclosures, agreements, and other communications we provide to you electronically meet the legal requirements that such communications be in writing.",
-      },
-      {
-        title: "Applicable Law",
-        content:
-          "By visiting this website, you agree that the laws of the United States, without regard to principles of conflict laws, will govern these terms of service, or any dispute of any sort that might come between me and you, or business partners and associates.",
-      },
-      {
-        title: "Disputes",
-        content:
-          "Any dispute related in any way to your purchases or visit to the web or mobile app shall be arbitrated by state or federal court in the United States and you consent to exclusive jurisdiction and venue of such courts. ",
-      },
-    ],
   },
   {
     path: "todoaholic",
@@ -233,6 +206,35 @@ const projects: Project[] = [
           "Any dispute related in any way to your purchases or visit to the web or mobile app shall be arbitrated by state or federal court in the United States and you consent to exclusive jurisdiction and venue of such courts. ",
       },
     ],
+  },
+  {
+    path: "home-automation",
+    date: "2017 - Present",
+    name: "Home Automation",
+    subtitle: "Home automation system built on Home Assistant.",
+    description: [
+      "After experimenting with home automation on Arduino board switching on and off relays based on sensor data, I wanted something more connected. Thus I bought a couple of ESP8266's, which are Arduino compatible boards with WiFi connectivity for as cheap as 3USD! I first started with automating using the Adafruit MQTT broker, which is free, but had a lot of limitations. The server could be down at any time, and it was unreachable if my internet went down.",
+      "So the solution was a system running on my LAN. This way, my devices worked together even if my internet was down, and I had control over the server if it went down. More importantly, I owned the data! I could decide who to share the data with myself and had total control over it.",
+      "The solution was Home Assistant. To clarify, I'm not associated with the development of Home Assistant. I'm just a user of their platform. Home Assistant is an open-source home automation platform that acts as a hub for all of your devices. It's probably the world's largest platform in terms of integrations at over 1600 on June 19th of 2020. It's also a local system, which is uncommon in the consumer market. It's not a consumer platform (yet), but it's come a long way since 2017, which is when I started using it.",
+      "On top of Home Assistant I have addons for running my ESP8266 devices with custom firmwares. Examples of devices I've built are a lot of multipurpose devices, which is one node that controls light, reports temperature, humidity, door status, etc. I've also made devices like a custom automated watering solution for our greenhouse. This device controls water flow with a servo, reports door status, temperature, humidity, and motion.",
+      "The possibilities are endless, and I've only scratched the surface of what's possible. I've learned a lot about IoT technologies, IoT protocols like MQTT, Z-Wave, and Zigbee. I look forward to seeing what Home Assistant evolves to, what new IoT devices I'll make, and contributing to the project myself in the future.",
+    ],
+    categories: ["Hardware"],
+    imgUrl: "/img/projects/home-automation.jpg",
+    appStoreUrl: null,
+    playStoreUrl: null,
+    webAppUrl: null,
+    links: [
+      {
+        name: "3D Print files for Surface Pro 2 wall mount",
+        link: "https://www.thingiverse.com/thing:2727094",
+      },
+      {
+        name: "3D Print files for iPad 3 wall mount",
+        link: "https://www.thingiverse.com/thing:2727088",
+      },
+    ],
+    technologies: null,
   },
   {
     path: "smart-water-control",
@@ -804,35 +806,6 @@ const projects: Project[] = [
       {
         name: "3D Printed pulley cover",
         link: "https://www.thingiverse.com/thing:2445734",
-      },
-    ],
-    technologies: null,
-  },
-  {
-    path: "home-automation",
-    date: "2017 - Present",
-    name: "Home Automation",
-    subtitle: "Home automation system built on Home Assistant.",
-    description: [
-      "After experimenting with home automation on Arduino board switching on and off relays based on sensor data, I wanted something more connected. Thus I bought a couple of ESP8266's, which are Arduino compatible boards with WiFi connectivity for as cheap as 3USD! I first started with automating using the Adafruit MQTT broker, which is free, but had a lot of limitations. The server could be down at any time, and it was unreachable if my internet went down.",
-      "So the solution was a system running on my LAN. This way, my devices worked together even if my internet was down, and I had control over the server if it went down. More importantly, I owned the data! I could decide who to share the data with myself and had total control over it.",
-      "The solution was Home Assistant. To clarify, I'm not associated with the development of Home Assistant. I'm just a user of their platform. Home Assistant is an open-source home automation platform that acts as a hub for all of your devices. It's probably the world's largest platform in terms of integrations at over 1600 on June 19th of 2020. It's also a local system, which is uncommon in the consumer market. It's not a consumer platform (yet), but it's come a long way since 2017, which is when I started using it.",
-      "On top of Home Assistant I have addons for running my ESP8266 devices with custom firmwares. Examples of devices I've built are a lot of multipurpose devices, which is one node that controls light, reports temperature, humidity, door status, etc. I've also made devices like a custom automated watering solution for our greenhouse. This device controls water flow with a servo, reports door status, temperature, humidity, and motion.",
-      "The possibilities are endless, and I've only scratched the surface of what's possible. I've learned a lot about IoT technologies, IoT protocols like MQTT, Z-Wave, and Zigbee. I look forward to seeing what Home Assistant evolves to, what new IoT devices I'll make, and contributing to the project myself in the future.",
-    ],
-    categories: ["Hardware"],
-    imgUrl: "/img/projects/home-automation.jpg",
-    appStoreUrl: null,
-    playStoreUrl: null,
-    webAppUrl: null,
-    links: [
-      {
-        name: "3D Print files for Surface Pro 2 wall mount",
-        link: "https://www.thingiverse.com/thing:2727094",
-      },
-      {
-        name: "3D Print files for iPad 3 wall mount",
-        link: "https://www.thingiverse.com/thing:2727088",
       },
     ],
     technologies: null,
