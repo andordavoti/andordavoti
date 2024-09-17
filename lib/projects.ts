@@ -52,81 +52,105 @@ type TermsType = {
 
 const projects: Project[] = [
   {
-    path: "smart-water-control",
-    date: "2022",
-    name: "Smart Water Control",
-    subtitle: "A simple IoT water control switch.",
+    path: "fast-rhymes",
+    date: "2019 - Present",
+    name: "Fast Rhymes",
+    subtitle: "Tri-platform iOS, Android and web songwriting app.",
     description: [
-      "Created a simple water control switch that can be controlled from anywhere.",
-      "Read more about it in the medium article linked below.",
+      "Tri-platform mobile (iOS, Android and web) songwriting app, built using React Native, React Native for Web, Redux, Expo, and Firebase. Find words that rhyme, associations, words with similar meaning, words with similar spelling, definitions, etc. You can sort search results by syllables or sort by the most relevant words.",
+      "With an integrated lyrics editor, you can swipe between search and the lyrics you are working on. It was built to be fast and convenient, with a minimalist design to not be in the way of the artists' creative process.",
     ],
-    categories: ["Hardware"],
-    imgUrl: "/img/projects/smart-water-control.jpg",
-    appStoreUrl: null,
-    playStoreUrl: null,
-    webAppUrl: null,
-    links: [
-      {
-        name: "Medium article",
-        link: "https://medium.com/@andordavoti/diy-smart-water-control-64f86096e1fe",
-      },
-    ],
-    technologies: [
-      {
-        name: "Home Assistant",
-        link: "https://www.home-assistant.io/",
-      },
-      {
-        name: "ESPHome",
-        link: "https://esphome.io/",
-      },
-      {
-        name: "YAML",
-        link: "https://yaml.org/",
-      },
-    ],
-  },
-  {
-    path: "frid",
-    date: "2021 - 2023",
-    name: "Frid",
-    subtitle: "Finance app for iOS and Android.",
-    description: [
-      "Frid is a finance app for iOS and Android. It gives you an overview of all your finances in one place.",
-      "While working for Frid, I have taken the frontend app development from scratch to open beta by myself, and I'm now focusing on learning backend development.",
-    ],
-    categories: ["Native"],
-    imgUrl: "/img/projects/frid.jpg",
-    appStoreUrl: "https://apps.apple.com/us/app/frid/id1574147575",
+    categories: ["Native", "Web"],
+    imgUrl: "/img/projects/fast-rhymes.jpg",
+    appStoreUrl: "https://apps.apple.com/us/app/fast-rhymes/id1492575811?ls=1",
     playStoreUrl:
-      "https://play.google.com/store/apps/details?id=no.visonomic.mobileapp",
-    webAppUrl: null,
+      "https://play.google.com/store/apps/details?id=rhyme.dictionary.mobileapp",
+    webAppUrl: "https://app.fastrhymes.com/",
     links: [
       {
-        name: "Website",
-        link: "https://frid.app/",
+        name: "Landing Page",
+        link: "https://fastrhymes.com/",
+      },
+      {
+        name: "ProductHunt",
+        link: "https://www.producthunt.com/products/fast-rhymes",
+      },
+      {
+        name: "Kode24.no Article",
+        link: "https://www.kode24.no/artikkel/plutselig-tok-andors-app-av-pa-app-store-jeg-tjener-litt-pa-den/81860727",
+      },
+      {
+        name: "Koncertbooking.com Article",
+        link: "https://koncertbooking.com/blog/olyan-eszkozt-akartunk-letrehozni-ami-inspiral-es-segit-tobb-zene-letrehozasaban-davoti-andorral-a-fast-rhymes-letrehozojaval-beszelgettunk",
+      },
+      {
+        name: "Paywall review by Nikita Maidanov",
+        link: "https://paywall.tips/fast-rhymes/",
       },
     ],
     technologies: [
+      {
+        name: "React",
+        link: "https://reactjs.org/",
+      },
+      {
+        name: "Next.js",
+        link: "https://nextjs.org/",
+      },
+      {
+        name: "Redux",
+        link: "https://redux.js.org/",
+      },
+      {
+        name: "Expo",
+        link: "https://expo.io/",
+      },
       {
         name: "React Native",
         link: "https://reactnative.dev/",
+      },
+      {
+        name: "React Native for Web",
+        link: "https://github.com/necolas/react-native-web",
       },
       {
         name: "Typescript",
         link: "https://www.typescriptlang.org/",
       },
       {
-        name: "AWS",
-        link: "https://aws.amazon.com/",
-      },
-      {
-        name: "Java",
-        link: "https://dev.java/",
+        name: "Firebase",
+        link: "https://firebase.google.com/",
       },
       {
         name: "GitHub Actions",
         link: "https://github.com/features/actions",
+      },
+    ],
+    terms: [
+      {
+        title: "",
+        content:
+          'Please read these terms of service ("terms", "terms of service") carefully before using the Fast Rhymes mobile and web app (the "service") is operated by Andor Davoti (“I”, "me").',
+      },
+      {
+        title: "Conditions of Use",
+        content:
+          "I will provide their services to you, which are subject to the conditions stated below in this document. Every time you visit this app, use its services, or make a purchase, you accept the following conditions. This is why I urge you to read them carefully.",
+      },
+      {
+        title: "Communications",
+        content:
+          "All communication with me is electronic. Every time you send me an email or visit the website or the app, you are going to be communicating with me. You hereby consent to receive communications from me. You also agree that all notices, disclosures, agreements, and other communications we provide to you electronically meet the legal requirements that such communications be in writing.",
+      },
+      {
+        title: "Applicable Law",
+        content:
+          "By visiting this website, you agree that the laws of the United States, without regard to principles of conflict laws, will govern these terms of service, or any dispute of any sort that might come between me and you, or business partners and associates.",
+      },
+      {
+        title: "Disputes",
+        content:
+          "Any dispute related in any way to your purchases or visit to the web or mobile app shall be arbitrated by state or federal court in the United States and you consent to exclusive jurisdiction and venue of such courts. ",
       },
     ],
   },
@@ -211,6 +235,138 @@ const projects: Project[] = [
     ],
   },
   {
+    path: "smart-water-control",
+    date: "2022",
+    name: "Smart Water Control",
+    subtitle: "A simple IoT water control switch.",
+    description: [
+      "Created a simple water control switch that can be controlled from anywhere.",
+      "Read more about it in the medium article linked below.",
+    ],
+    categories: ["Hardware"],
+    imgUrl: "/img/projects/smart-water-control.jpg",
+    appStoreUrl: null,
+    playStoreUrl: null,
+    webAppUrl: null,
+    links: [
+      {
+        name: "Medium article",
+        link: "https://medium.com/@andordavoti/diy-smart-water-control-64f86096e1fe",
+      },
+    ],
+    technologies: [
+      {
+        name: "Home Assistant",
+        link: "https://www.home-assistant.io/",
+      },
+      {
+        name: "ESPHome",
+        link: "https://esphome.io/",
+      },
+      {
+        name: "YAML",
+        link: "https://yaml.org/",
+      },
+    ],
+  },
+  {
+    path: "frid",
+    date: "2021 - 2023",
+    name: "Frid",
+    subtitle: "Finance app for iOS and Android.",
+    description: [
+      "Frid is a finance app for iOS and Android. It gives you an overview of all your finances in one place.",
+      "While working for Frid, I have taken the frontend app development from scratch to open beta by myself, and I'm now focusing on learning backend development.",
+    ],
+    categories: ["Native"],
+    imgUrl: "/img/projects/frid.jpg",
+    appStoreUrl: "https://apps.apple.com/us/app/frid/id1574147575",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=no.visonomic.mobileapp",
+    webAppUrl: null,
+    links: [
+      {
+        name: "Website",
+        link: "https://frid.app/",
+      },
+    ],
+    technologies: [
+      {
+        name: "React Native",
+        link: "https://reactnative.dev/",
+      },
+      {
+        name: "Typescript",
+        link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "AWS",
+        link: "https://aws.amazon.com/",
+      },
+      {
+        name: "Java",
+        link: "https://dev.java/",
+      },
+      {
+        name: "GitHub Actions",
+        link: "https://github.com/features/actions",
+      },
+    ],
+  },
+  {
+    path: "personal-website",
+    name: "Personal Website",
+    date: "2020 - Present",
+    subtitle: "This website.",
+    description: [
+      "One central place for all of my past and present projects. The first version of this website was built with Typescript, React and Material UI. The project was then utilizing Preact in production to keep the bundle size small.",
+      "Since then it's been rewritten with Next.js and React. The website is hosted on Vercel, and the source code is available on GitHub.",
+    ],
+    categories: ["Web"],
+    imgUrl: "/img/projects/personal-website.jpg",
+    appStoreUrl: null,
+    playStoreUrl: null,
+    webAppUrl: null,
+    links: [
+      {
+        name: "Website URL",
+        link: "https://andordavoti.com/",
+      },
+      {
+        name: "New GitHub repo",
+        link: "https://github.com/andordavoti/andordavoti",
+      },
+      {
+        name: "Old GitHub repo",
+        link: "https://github.com/andordavoti/personal-website",
+      },
+    ],
+    technologies: [
+      {
+        name: "React",
+        link: "https://reactjs.org/",
+      },
+      {
+        name: "Next.js",
+        link: "https://nextjs.org/",
+      },
+      {
+        name: "Preact",
+        link: "https://preactjs.com/",
+      },
+
+      {
+        name: "Typescript",
+        link: "https://www.typescriptlang.org/",
+      },
+
+      {
+        name: "Material UI",
+        link: "https://material-ui.com/",
+      },
+    ],
+  },
+  {
     path: "cruiseaholic",
     name: "Cruiseaholic",
     date: "2021",
@@ -283,59 +439,6 @@ const projects: Project[] = [
       {
         name: "Expo",
         link: "https://expo.io/",
-      },
-    ],
-  },
-  {
-    path: "personal-website",
-    name: "Personal Website",
-    date: "2020 - Present",
-    subtitle: "This website.",
-    description: [
-      "One central place for all of my past and present projects. The first version of this website was built with Typescript, React and Material UI. The project was then utilizing Preact in production to keep the bundle size small.",
-      "Since then it's been rewritten with Next.js and React. The website is hosted on Vercel, and the source code is available on GitHub.",
-    ],
-    categories: ["Web"],
-    imgUrl: "/img/projects/personal-website.jpg",
-    appStoreUrl: null,
-    playStoreUrl: null,
-    webAppUrl: null,
-    links: [
-      {
-        name: "Website URL",
-        link: "https://andordavoti.com/",
-      },
-      {
-        name: "New GitHub repo",
-        link: "https://github.com/andordavoti/andordavoti",
-      },
-      {
-        name: "Old GitHub repo",
-        link: "https://github.com/andordavoti/personal-website",
-      },
-    ],
-    technologies: [
-      {
-        name: "React",
-        link: "https://reactjs.org/",
-      },
-      {
-        name: "Next.js",
-        link: "https://nextjs.org/",
-      },
-      {
-        name: "Preact",
-        link: "https://preactjs.com/",
-      },
-
-      {
-        name: "Typescript",
-        link: "https://www.typescriptlang.org/",
-      },
-
-      {
-        name: "Material UI",
-        link: "https://material-ui.com/",
       },
     ],
   },
@@ -566,109 +669,6 @@ const projects: Project[] = [
       {
         name: "SQLite",
         link: "https://www.sqlite.org/index.html",
-      },
-    ],
-  },
-  {
-    path: "fast-rhymes",
-    date: "2019 - Present",
-    name: "Fast Rhymes",
-    subtitle: "Tri-platform iOS, Android and web songwriting app.",
-    description: [
-      "Tri-platform mobile (iOS, Android and web) songwriting app, built using React Native, React Native for Web, Redux, Expo, and Firebase. Find words that rhyme, associations, words with similar meaning, words with similar spelling, definitions, etc. You can sort search results by syllables or sort by the most relevant words.",
-      "With an integrated lyrics editor, you can swipe between search and the lyrics you are working on. It was built to be fast and convenient, with a minimalist design to not be in the way of the artists' creative process.",
-    ],
-    categories: ["Native", "Web"],
-    imgUrl: "/img/projects/fast-rhymes.jpg",
-    appStoreUrl: "https://apps.apple.com/us/app/fast-rhymes/id1492575811?ls=1",
-    playStoreUrl:
-      "https://play.google.com/store/apps/details?id=rhyme.dictionary.mobileapp",
-    webAppUrl: "https://app.fastrhymes.com/",
-    links: [
-      {
-        name: "Landing Page",
-        link: "https://fastrhymes.com/",
-      },
-      {
-        name: "ProductHunt",
-        link: "https://www.producthunt.com/products/fast-rhymes",
-      },
-      {
-        name: "Kode24.no Article",
-        link: "https://www.kode24.no/artikkel/plutselig-tok-andors-app-av-pa-app-store-jeg-tjener-litt-pa-den/81860727",
-      },
-      {
-        name: "Koncertbooking.com Article",
-        link: "https://koncertbooking.com/blog/olyan-eszkozt-akartunk-letrehozni-ami-inspiral-es-segit-tobb-zene-letrehozasaban-davoti-andorral-a-fast-rhymes-letrehozojaval-beszelgettunk",
-      },
-      {
-        name: "Paywall review by Nikita Maidanov",
-        link: "https://paywall.tips/fast-rhymes/",
-      },
-    ],
-    technologies: [
-      {
-        name: "React",
-        link: "https://reactjs.org/",
-      },
-      {
-        name: "Next.js",
-        link: "https://nextjs.org/",
-      },
-      {
-        name: "Redux",
-        link: "https://redux.js.org/",
-      },
-      {
-        name: "Expo",
-        link: "https://expo.io/",
-      },
-      {
-        name: "React Native",
-        link: "https://reactnative.dev/",
-      },
-      {
-        name: "React Native for Web",
-        link: "https://github.com/necolas/react-native-web",
-      },
-      {
-        name: "Typescript",
-        link: "https://www.typescriptlang.org/",
-      },
-      {
-        name: "Firebase",
-        link: "https://firebase.google.com/",
-      },
-      {
-        name: "GitHub Actions",
-        link: "https://github.com/features/actions",
-      },
-    ],
-    terms: [
-      {
-        title: "",
-        content:
-          'Please read these terms of service ("terms", "terms of service") carefully before using the Fast Rhymes mobile and web app (the "service") is operated by Andor Davoti (“I”, "me").',
-      },
-      {
-        title: "Conditions of Use",
-        content:
-          "I will provide their services to you, which are subject to the conditions stated below in this document. Every time you visit this app, use its services, or make a purchase, you accept the following conditions. This is why I urge you to read them carefully.",
-      },
-      {
-        title: "Communications",
-        content:
-          "All communication with me is electronic. Every time you send me an email or visit the website or the app, you are going to be communicating with me. You hereby consent to receive communications from me. You also agree that all notices, disclosures, agreements, and other communications we provide to you electronically meet the legal requirements that such communications be in writing.",
-      },
-      {
-        title: "Applicable Law",
-        content:
-          "By visiting this website, you agree that the laws of the United States, without regard to principles of conflict laws, will govern these terms of service, or any dispute of any sort that might come between me and you, or business partners and associates.",
-      },
-      {
-        title: "Disputes",
-        content:
-          "Any dispute related in any way to your purchases or visit to the web or mobile app shall be arbitrated by state or federal court in the United States and you consent to exclusive jurisdiction and venue of such courts. ",
       },
     ],
   },
