@@ -88,7 +88,7 @@ const projects: Project[] = [
   },
   {
     path: "frid",
-    date: "2021 - Present",
+    date: "2021 - 2023",
     name: "Frid",
     subtitle: "Finance app for iOS and Android.",
     description: [
@@ -524,7 +524,7 @@ const projects: Project[] = [
   },
   {
     path: "den-store-bokmalsordboka",
-    date: "2019 - Present",
+    date: "2019 - 2024",
     name: "Bokmålsordboka",
     subtitle: "iOS and Android app for the largest Norwegian dictionary.",
     description: [
@@ -674,7 +674,7 @@ const projects: Project[] = [
   },
   {
     path: "hunnor",
-    date: "2019 - Present",
+    date: "2019 - 2023",
     name: "HunNor Dictionary",
     subtitle: "Mobile app for a Norwegian-Hungarian dictionary.",
     description: [
@@ -789,7 +789,7 @@ const projects: Project[] = [
   },
   {
     path: "electric-longboard",
-    date: "2017 - Present",
+    date: "2017 - 2022",
     name: "Electric Longboard",
     subtitle: "High power e-board built from scratch.",
     description: [
