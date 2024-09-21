@@ -80,6 +80,10 @@ const projects: Project[] = [
         link: "https://www.kode24.no/artikkel/plutselig-tok-andors-app-av-pa-app-store-jeg-tjener-litt-pa-den/81860727",
       },
       {
+        name: "Kode24.no Payload CMS Article",
+        link: "https://www.kode24.no/artikkel/na-snakker-alle-om-payload-cms-andor-tror-han-vet-hvorfor/81953899",
+      },
+      {
         name: "Koncertbooking.com Article",
         link: "https://koncertbooking.com/blog/olyan-eszkozt-akartunk-letrehozni-ami-inspiral-es-segit-tobb-zene-letrehozasaban-davoti-andorral-a-fast-rhymes-letrehozojaval-beszelgettunk",
       },
@@ -116,6 +120,10 @@ const projects: Project[] = [
       {
         name: "Typescript",
         link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "Payload CMS",
+        link: "https://payloadcms.com/",
       },
       {
         name: "Firebase",
