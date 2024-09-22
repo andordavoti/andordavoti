@@ -12,7 +12,6 @@ import {
   ListItemText,
   Toolbar,
   Typography,
-  useMediaQuery,
   useTheme,
   ListItemButton,
 } from "@mui/material";
@@ -25,11 +24,8 @@ import { ICON_SIZE } from "../lib/theme";
 import { links } from "../lib/links";
 
 const Navbar: FC = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
   const theme = useTheme();
-  const isMobile = useMediaQuery("only screen and (max-width: 768px)");
-
+  const [drawerOpen, setDrawerOpen] = useState(false);
   return (
     <AppBar
       color="primary"
@@ -61,142 +57,128 @@ const Navbar: FC = () => {
             </Typography>
           </NextLink>
 
-          {isMobile ? (
-            <Box>
-              <IconButton
-                color="secondary"
-                onClick={() => setDrawerOpen(true)}
-                aria-label="Side Drawer Open Button"
-              >
-                <HiMenuAlt3 size={ICON_SIZE} />
-              </IconButton>
+          <Box className="isMobile">
+            <IconButton
+              color="secondary"
+              onClick={() => setDrawerOpen(true)}
+              aria-label="Side Drawer Open Button"
+            >
+              <HiMenuAlt3 size={ICON_SIZE} />
+            </IconButton>
 
-              <SwipeableDrawer
-                anchor="right"
-                open={drawerOpen}
-                onOpen={() => setDrawerOpen(true)}
-                onClose={() => setDrawerOpen(false)}
+            <SwipeableDrawer
+              anchor="right"
+              open={drawerOpen}
+              onOpen={() => setDrawerOpen(true)}
+              onClose={() => setDrawerOpen(false)}
+            >
+              <div
+                style={{ width: 250, marginLeft: 15 }}
+                onClick={() => setDrawerOpen(false)}
+                onKeyDown={() => setDrawerOpen(false)}
               >
                 <div
-                  style={{ width: 250, marginLeft: 15 }}
-                  onClick={() => setDrawerOpen(false)}
-                  onKeyDown={() => setDrawerOpen(false)}
+                  style={{
+                    width: 250,
+                    display: "flex",
+                    justifyContent: "flex-end",
+                  }}
                 >
-                  <div
-                    style={{
-                      width: 250,
-                      display: "flex",
-                      justifyContent: "flex-end",
-                    }}
+                  <IconButton
+                    style={{ marginTop: 15, marginRight: 15 }}
+                    color="secondary"
+                    aria-label="Side Drawer Close Button"
                   >
-                    <IconButton
-                      style={{ marginTop: 15, marginRight: 15 }}
-                      color="secondary"
-                      aria-label="Side Drawer Close Button"
-                    >
-                      <MdClose color="#fff" size={ICON_SIZE} />
-                    </IconButton>
-                  </div>
-
-                  <List>
-                    <Link
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={links.medium}
-                    >
-                      <ListItemButton aria-label="Medium Button">
-                        <ListItemIcon>
-                          <FaMedium color="#fff" size={ICON_SIZE} />
-                        </ListItemIcon>
-                        <ListItemText primary="Medium" />
-                      </ListItemButton>
-                    </Link>
-
-                    <Link
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={links.github}
-                    >
-                      <ListItemButton aria-label="GitHub Button">
-                        <ListItemIcon>
-                          <FaGithub color="#fff" size={ICON_SIZE} />
-                        </ListItemIcon>
-                        <ListItemText primary="GitHub" />
-                      </ListItemButton>
-                    </Link>
-
-                    <Link
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={links.linkedin}
-                    >
-                      <ListItemButton aria-label="LinkedIn Button">
-                        <ListItemIcon>
-                          <FaLinkedin color="#fff" size={ICON_SIZE} />
-                        </ListItemIcon>
-                        <ListItemText primary="LinkedIn" />
-                      </ListItemButton>
-                    </Link>
-
-                    <Link
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={links.email}
-                    >
-                      <ListItemButton aria-label="Email Button">
-                        <ListItemIcon>
-                          <MdMailOutline color="#fff" size={ICON_SIZE} />
-                        </ListItemIcon>
-                        <ListItemText primary="Email" />
-                      </ListItemButton>
-                    </Link>
-                  </List>
+                    <MdClose color="#fff" size={ICON_SIZE} />
+                  </IconButton>
                 </div>
-              </SwipeableDrawer>
-            </Box>
-          ) : (
-            <Box>
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href={links.medium}
-              >
-                <IconButton color="secondary" aria-label="Medium Button">
-                  <FaMedium size={ICON_SIZE} />
-                </IconButton>
-              </Link>
 
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href={links.github}
-              >
-                <IconButton color="secondary" aria-label="GitHub Button">
-                  <FaGithub size={ICON_SIZE} />
-                </IconButton>
-              </Link>
+                <List>
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={links.medium}
+                  >
+                    <ListItemButton aria-label="Medium Button">
+                      <ListItemIcon>
+                        <FaMedium color="#fff" size={ICON_SIZE} />
+                      </ListItemIcon>
+                      <ListItemText primary="Medium" />
+                    </ListItemButton>
+                  </Link>
 
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href={links.linkedin}
-              >
-                <IconButton color="secondary" aria-label="LinkedIn Button">
-                  <FaLinkedin size={ICON_SIZE} />
-                </IconButton>
-              </Link>
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={links.github}
+                  >
+                    <ListItemButton aria-label="GitHub Button">
+                      <ListItemIcon>
+                        <FaGithub color="#fff" size={ICON_SIZE} />
+                      </ListItemIcon>
+                      <ListItemText primary="GitHub" />
+                    </ListItemButton>
+                  </Link>
 
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href={links.email}
-              >
-                <IconButton color="secondary" aria-label="Email Button">
-                  <MdMailOutline size={ICON_SIZE} />
-                </IconButton>
-              </Link>
-            </Box>
-          )}
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={links.linkedin}
+                  >
+                    <ListItemButton aria-label="LinkedIn Button">
+                      <ListItemIcon>
+                        <FaLinkedin color="#fff" size={ICON_SIZE} />
+                      </ListItemIcon>
+                      <ListItemText primary="LinkedIn" />
+                    </ListItemButton>
+                  </Link>
+
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={links.email}
+                  >
+                    <ListItemButton aria-label="Email Button">
+                      <ListItemIcon>
+                        <MdMailOutline color="#fff" size={ICON_SIZE} />
+                      </ListItemIcon>
+                      <ListItemText primary="Email" />
+                    </ListItemButton>
+                  </Link>
+                </List>
+              </div>
+            </SwipeableDrawer>
+          </Box>
+
+          <Box className="isDesktop">
+            <Link target="_blank" rel="noopener noreferrer" href={links.medium}>
+              <IconButton color="secondary" aria-label="Medium Button">
+                <FaMedium size={ICON_SIZE} />
+              </IconButton>
+            </Link>
+
+            <Link target="_blank" rel="noopener noreferrer" href={links.github}>
+              <IconButton color="secondary" aria-label="GitHub Button">
+                <FaGithub size={ICON_SIZE} />
+              </IconButton>
+            </Link>
+
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href={links.linkedin}
+            >
+              <IconButton color="secondary" aria-label="LinkedIn Button">
+                <FaLinkedin size={ICON_SIZE} />
+              </IconButton>
+            </Link>
+
+            <Link target="_blank" rel="noopener noreferrer" href={links.email}>
+              <IconButton color="secondary" aria-label="Email Button">
+                <MdMailOutline size={ICON_SIZE} />
+              </IconButton>
+            </Link>
+          </Box>
         </Container>
       </Toolbar>
     </AppBar>

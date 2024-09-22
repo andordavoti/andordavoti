@@ -3,8 +3,8 @@ body {
   background-color: #1c1c1c;
   padding: 0;
   margin: 0;
-  font-family: Roboto, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+  font-family: Roboto, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
   scroll-behavior: smooth;
 }
 
@@ -32,4 +32,21 @@ a {
 @font-face {
   font-family: "MustangW01-Regular";
   src: local("MustangW01-Regular"), url(/fonts/mustang.ttf) format("truetype");
+}
+
+.isDesktop {
+  display: initial;
+}
+
+.isMobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .isDesktop {
+    display: none;
+  }
+  .isMobile {
+    display: initial;
+  }
 }
