@@ -11,16 +11,16 @@ const Container = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   padding: "2rem",
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     padding: 10,
   },
 }));
 
 const TextContainer = styled("div")(({ theme }) => ({
-  width: "40%",
+  width: "35%",
   margin: 10,
   marginRight: 50,
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     width: "75%",
     marginRight: 10,
   },
@@ -30,7 +30,7 @@ const ProfileImage = styled(Image)(({ theme }) => ({
   borderRadius: "50%",
   border: "2px solid white",
   borderColor: theme.palette.text.primary,
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     margin: "2rem",
   },
 }));
