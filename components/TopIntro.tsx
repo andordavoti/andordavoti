@@ -11,25 +11,13 @@ const Container = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   padding: "2rem",
-  [theme.breakpoints.down("md")]: {
-    padding: 10,
-  },
-}));
-
-const TextContainer = styled("div")(({ theme }) => ({
-  width: "35%",
-  margin: 10,
-  marginRight: 50,
-  [theme.breakpoints.down("md")]: {
-    width: "75%",
-    marginRight: 10,
-  },
 }));
 
 const ProfileImage = styled(Image)(({ theme }) => ({
   borderRadius: "50%",
   border: "2px solid white",
   borderColor: theme.palette.text.primary,
+  marginLeft: "2rem",
   [theme.breakpoints.down("md")]: {
     margin: "2rem",
   },
@@ -38,9 +26,7 @@ const ProfileImage = styled(Image)(({ theme }) => ({
 const TopIntro: React.FC = () => {
   return (
     <Container>
-      <TextContainer>
-        <Box m="2rem" />
-
+      <div style={{ maxWidth: 330 }}>
         <Typography color="textPrimary" variant="h5" fontWeight="500">
           I am a full stack developer from Oslo, Norway.
         </Typography>
@@ -51,7 +37,8 @@ const TopIntro: React.FC = () => {
           With a passion for building things, I've built several software and
           hardware projects over the years, which you can check out bellow.
         </Typography>
-      </TextContainer>
+      </div>
+
       <ProfileImage
         width={200}
         height={200}
