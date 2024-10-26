@@ -1,17 +1,14 @@
-"use client";
-
 import { FC } from "react";
-import { Box, Container, Link, Typography, useTheme } from "@mui/material";
+import { Box, Container, Link, Typography } from "@mui/material";
 import { Project } from "../lib/projects";
 import StoreIcon from "./StoreIcon";
+import { palette } from "../lib/palette";
 
 interface Props {
   project: Project;
 }
 
 const ProjectDetails: FC<Props> = ({ project }) => {
-  const theme = useTheme();
-
   const renderLinks = () => {
     if (project.links) {
       return (
@@ -163,7 +160,7 @@ const ProjectDetails: FC<Props> = ({ project }) => {
           display: "block",
           marginLeft: "auto",
           marginRight: "auto",
-          border: `1px solid ${theme.palette.text.primary}`,
+          border: `1px solid ${palette.text?.primary}`,
         }}
       />
 

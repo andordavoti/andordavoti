@@ -1,21 +1,5 @@
-import { PaletteOptions, createTheme } from "@mui/material";
-
-const palette: PaletteOptions = {
-  primary: {
-    main: "#1c1c1c",
-  },
-  secondary: {
-    main: "#fff",
-  },
-  text: {
-    primary: "#fff",
-    secondary: "#d3d3d3",
-  },
-  background: {
-    default: "#1c1c1c",
-    paper: "#1c1c1c",
-  },
-};
+import { createTheme } from "@mui/material";
+import { palette } from "./palette";
 
 export const theme = createTheme({
   palette,
