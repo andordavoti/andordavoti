@@ -3,7 +3,7 @@ import { Box, Typography, Card } from "@mui/material";
 import { Project } from "../lib/projects";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { palette } from "../lib/theme";
+import { palette } from "../lib/palette";
 
 type Props = Pick<Project, "path" | "date" | "name" | "imgUrl" | "subtitle">;
 
