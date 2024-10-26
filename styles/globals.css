@@ -34,6 +34,14 @@ a {
   src: local("MustangW01-Regular"), url(/fonts/mustang.ttf) format("truetype");
 }
 
+.scale-on-hover {
+  transition: transform 0.15s ease-in-out !important;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05) !important;
+}
+
 .isDesktop {
   display: initial;
 }
