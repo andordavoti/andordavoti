@@ -8,7 +8,7 @@ export const theme = createTheme({
       xs: 0, // not used
       sm: 500,
       md: 768,
-      lg: 1050,
+      lg: 1250,
       xl: 1920, // not used
     },
   },

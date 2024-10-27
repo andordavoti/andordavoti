@@ -21,7 +21,7 @@ const ProjectCard: React.FC<Props> = ({
       variant="outlined"
       onClick={() => router.push(`project/${path}`)}
       style={{
-        width: 250,
+        width: 300,
         height: "auto",
         backgroundColor: "#242526",
         borderRadius: "1rem",
@@ -35,7 +35,12 @@ const ProjectCard: React.FC<Props> = ({
         cursor: "pointer",
       }}
     >
-      <Typography color="textPrimary" align="center" variant="h6">
+      <Typography
+        color="textPrimary"
+        align="center"
+        variant="h5"
+        fontWeight="500"
+      >
         {name}
       </Typography>
 
@@ -59,8 +64,8 @@ const ProjectCard: React.FC<Props> = ({
       <Box m="0.5rem" />
 
       <Image
-        width={200}
-        height={200}
+        width={250}
+        height={250}
         src={imgUrl}
         alt={name}
         style={{
