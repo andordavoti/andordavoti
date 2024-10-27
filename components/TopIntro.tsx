@@ -11,6 +11,9 @@ const Container = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   padding: "2rem",
+  [theme.breakpoints.down("md")]: {
+    paddingBottom: 0,
+  },
 }));
 
 const ProfileImage = styled(Image)(({ theme }) => ({
