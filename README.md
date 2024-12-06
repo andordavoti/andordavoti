@@ -9,7 +9,4 @@
 🕸️ Company: [davotisolutions.com](https://davotisolutions.com)
 <br />
 <br />
-📜 Medium: [medium.com/@andordavoti](https://medium.com/@andordavoti)
-<br />
-<br />
 💼 LinkedIn: [linkedin.com/in/andordavoti](https://linkedin.com/in/andordavoti)
