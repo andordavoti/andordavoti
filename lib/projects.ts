@@ -65,7 +65,7 @@ const projects: Project[] = [
     appStoreUrl: "https://apps.apple.com/us/app/fast-rhymes/id1492575811",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=rhyme.dictionary.mobileapp",
-    webAppUrl: "https://app.fastrhymes.com",
+    webAppUrl: null,
     links: [
       {
         name: "Landing Page",
