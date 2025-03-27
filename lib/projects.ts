@@ -91,6 +91,10 @@ const projects: Project[] = [
         name: "Paywall review by Nikita Maidanov",
         link: "https://paywall.tips/fast-rhymes",
       },
+      {
+        name: "Fenomener Podcast",
+        link: "https://open.spotify.com/episode/6906MWI992bJDcKkQFCOME?si=Ibd89zuZTsy1D8-UY2-fBQ",
+      },
     ],
     technologies: [
       {
