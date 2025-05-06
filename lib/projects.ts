@@ -23,6 +23,7 @@ interface Link {
 }
 
 type URLPath =
+  | "teardown-trivia"
   | "smart-water-control"
   | "frid"
   | "todoaholic"
@@ -136,6 +137,86 @@ const projects: Project[] = [
       {
         name: "GitHub Actions",
         link: "https://github.com/features/actions",
+      },
+    ],
+  },
+  {
+    path: "teardown-trivia",
+    date: "2025",
+    name: "Teardown Trivia",
+    subtitle: "A fun and challenging electronics guessing game.",
+    description: [
+      "See if you can guess what product we've torn down in this multiple choice electronics guessing game!",
+      "How it works:",
+      "You’ll see a close-up image of the inner circuit board of a real-world digital device. Your job? Pick the correct product from four options. Guess right to move on. Guess wrong? Well, you'll learn something new anyway.",
+      "What’s inside:",
+      "Season 1 (Free): 3 games to get your brain buzzing.",
+      "Season 2 (One-time purchase, $3): Unlock 25 more challenging teardowns. No ads. No subscriptions. Just pure techy fun.",
+      "Perfect for: hardware geeks, rngineers-in-the-making, puzzle and trivia lovers, and anyone who’s ever opened a remote control just to see what’s inside.",
+      "Get ready to tear things down – without the screwdriver.",
+    ],
+    categories: ["Native"],
+    imgUrl: "/img/projects/teardown-trivia.jpg",
+    appStoreUrl: null, // TODO: add app store link
+    playStoreUrl: null, // TODO: add play store link
+    webAppUrl: null,
+    links: null,
+    technologies: [
+      {
+        name: "Expo",
+        link: "https://expo.dev/",
+      },
+      {
+        name: "React Native",
+        link: "https://reactnative.dev/",
+      },
+      {
+        name: "Typescript",
+        link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "Firebase",
+        link: "https://firebase.google.com/",
+      },
+    ],
+    privacy: [
+      "Anonymous user data is collected for Firebase Analytics and Firebase Crashlytics.",
+    ],
+    terms: [
+      {
+        title: "",
+        content:
+          'Please read these terms of service ("terms", "terms of service") carefully before using the todoaholic mobile and web app (the "service") is operated by Davoti Solutions AS (“We”, "us").',
+      },
+      {
+        title: "Conditions of Use",
+        content:
+          "We will provide their services to you, which are subject to the conditions stated below in this document. Every time you visit this app, use its services, or make a purchase, you accept the following conditions. This is why we urge you to read them carefully.",
+      },
+      {
+        title: "",
+        content:
+          'We take no responsibility for the use of this app. The app is provided as-is, and do not guarantee that it will work as expected or that the your data is safe. The app is provided "as is". We do not warrant that the app will be uninterrupted or error-free. You assume all risks associated with the use of this app.',
+      },
+      {
+        title: "Communications",
+        content:
+          "All communication with us is electronic. Every time you send us an email or use the app, you are going to be communicating with us. You hereby consent to receive communications from us. You also agree that all notices, disclosures, agreements, and other communications we provide to you electronically meet the legal requirements that such communications be in writing.",
+      },
+      {
+        title: "Payments",
+        content:
+          "All payments go through the Apple App Store and Google Play Store. Paid features in the app can change at any time without notice. Contact Apple or Google for any payment issues.",
+      },
+      {
+        title: "Applicable Law",
+        content:
+          "By visiting this website, you agree that the laws of the United States, without regard to principles of conflict laws, will govern these terms of service, or any dispute of any sort that might come between us and you, or business partners and associates.",
+      },
+      {
+        title: "Disputes",
+        content:
+          "Any dispute related in any way to your purchases or visit to the mobile app shall be arbitrated by state or federal court in the United States and you consent to exclusive jurisdiction and venue of such courts. ",
       },
     ],
   },
