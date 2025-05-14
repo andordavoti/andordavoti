@@ -186,12 +186,12 @@ const projects: Project[] = [
       {
         title: "",
         content:
-          'Please read these terms of service ("terms", "terms of service") carefully before using the todoaholic mobile and web app (the "service") is operated by Davoti Solutions AS (“We”, "us").',
+          'Please read these terms of service ("terms", "terms of service") carefully before using the Teardown Trivia mobile and web app (the "service") is operated by Davoti Solutions AS (“We”, "us").',
       },
       {
         title: "Conditions of Use",
         content:
-          "We will provide their services to you, which are subject to the conditions stated below in this document. Every time you visit this app, use its services, or make a purchase, you accept the following conditions. This is why we urge you to read them carefully.",
+          'We will provide their services to you, which are subject to the conditions stated below in this document. Every time you visit this app, use its services, or make a purchase, you accept the following conditions. This is why we urge you to read them carefully. We take no responsibility for the use of this app. The app is provided as-is, and we do not guarantee that it will work as expected. We do our best to ensure information security, but one can never be immune to data breaches. The app is provided "as is". We do not warrant that the app will be uninterrupted or error-free. You assume all risks associated with the use of this app.',
       },
       {
         title: "",
@@ -201,7 +201,7 @@ const projects: Project[] = [
       {
         title: "Communications",
         content:
-          "All communication with us is electronic. Every time you send us an email or use the app, you are going to be communicating with us. You hereby consent to receive communications from us. You also agree that all notices, disclosures, agreements, and other communications we provide to you electronically meet the legal requirements that such communications be in writing.",
+          "All communication with us is electronic. Every time you send us an email or use the app, you are going to be communicating with us. You also agree that all notices, disclosures, agreements, and other communications we provide to you electronically meet the legal requirements that such communications be in writing.",
       },
       {
         title: "Payments",
