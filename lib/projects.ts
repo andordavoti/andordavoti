@@ -180,7 +180,7 @@ const projects: Project[] = [
       },
     ],
     privacy: [
-      "Anonymous user data is collected for Firebase Analytics and Firebase Crashlytics.",
+      "In order to deliver this service we use Google and Apple to handle payments, where they are sub-processors for the personal data involved with payments.  Revenuecat is also a processor for us. Anonymous user data is collected for Firebase Analytics and Firebase Crashlytics.",
     ],
     terms: [
       {
