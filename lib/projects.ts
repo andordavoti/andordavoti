@@ -157,10 +157,16 @@ const projects: Project[] = [
     ],
     categories: ["Native"],
     imgUrl: "/img/projects/teardown-trivia.jpg",
-    appStoreUrl: null, // TODO: add app store link
-    playStoreUrl: null, // TODO: add play store link
+    appStoreUrl: "https://apps.apple.com/no/app/teardown-trivia/id6744923083",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.davotisolutions.teardown.trivia",
     webAppUrl: null,
-    links: null,
+    links: [
+      {
+        name: "Hacker News post",
+        link: "https://news.ycombinator.com/item?id=44726535",
+      },
+    ],
     technologies: [
       {
         name: "Expo",
