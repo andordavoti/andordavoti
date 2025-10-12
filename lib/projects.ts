@@ -96,6 +96,14 @@ const projects: Project[] = [
         name: "Fenomener Podcast",
         link: "https://open.spotify.com/episode/6906MWI992bJDcKkQFCOME?si=Ibd89zuZTsy1D8-UY2-fBQ",
       },
+      {
+        name: "Expo App Awards (LinkedIn)",
+        link: "https://www.linkedin.com/feed/update/urn:li:activity:7382481847257190400/",
+      },
+      {
+        name: "Expo App Awards (X)",
+        link: "https://x.com/expo/status/1976715411090719041",
+      },
     ],
     technologies: [
       {
