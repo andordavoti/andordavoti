@@ -1,6 +1,6 @@
 # Hi there 👋, I'm Andor
 
-✍️ Currently working on [fastrhymes.com](https://fastrhymes.com) & [elevateyourmind.app](https://elevateyourmind.app)
+✍️ Currently working on [fastrhymes.com](https://fastrhymes.com) & [sanser.app](https://sanser.app)
 <br />
 <br />
 🕸️ Portfolio: [andordavoti.com](https://andordavoti.com)
