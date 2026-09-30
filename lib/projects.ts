@@ -227,7 +227,6 @@ const projects: Project[] = [
     date: "2025",
     name: "Teardown Trivia",
     subtitle: "A fun and challenging electronics guessing game.",
-    featured: true,
     description: [
       "See if you can guess what product we've torn down in this multiple choice electronics guessing game!",
       "How it works:",
@@ -342,7 +341,6 @@ const projects: Project[] = [
     name: "Snitt",
     date: "2020 - Present",
     subtitle: "A free cross-platform mobile app for high school students.",
-    featured: true,
     description: [
       "A free cross-platform mobile app for Norwegian high school students. The student can add which subjects he/she has completed and which subject he/she will have in the future. This way the student gets an overview of their subjects and their grade performance. Then the app auto calculates their average grade with both the grade estimation for their future subjects and without. This way the student knows how much a single grade will impact their average score. The app also shows them their strongest and weakest subjects, this way they know what to focus on if they want to improve their score.",
     ],

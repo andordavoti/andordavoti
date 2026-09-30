@@ -8,8 +8,6 @@ import projects from "../lib/projects";
 const glowColors: Record<string, string> = {
   sanser: "rgba(74, 222, 128, 0.14)",
   "fast-rhymes": "rgba(212, 243, 107, 0.14)",
-  "teardown-trivia": "rgba(99, 102, 241, 0.18)",
-  snitt: "rgba(255, 255, 255, 0.07)",
 };
 
 const Featured: FC = () => {
