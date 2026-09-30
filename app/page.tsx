@@ -1,12 +1,13 @@
-import Container from "@mui/material/Container";
-import TopIntro from "../components/TopIntro";
+import Hero from "../components/Hero";
+import Featured from "../components/Featured";
 import Projects from "../components/Projects";
 
 const Page = () => (
-  <Container>
-    <TopIntro />
+  <>
+    <Hero />
+    <Featured />
     <Projects />
-  </Container>
+  </>
 );
 
 export default Page;

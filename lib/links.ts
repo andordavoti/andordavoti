@@ -3,4 +3,5 @@ export const links = {
   github: "https://github.com/andordavoti",
   linkedin: "https://linkedin.com/in/andordavoti",
   email: "mailto:andor.davoti@gmail.com",
+  davotiSolutions: "https://davotisolutions.com",
 };

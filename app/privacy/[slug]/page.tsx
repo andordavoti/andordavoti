@@ -1,106 +1,64 @@
-import projects from "../../../lib/projects";
-import { FC, useMemo } from "react";
+import { Metadata } from "next";
+import Link from "next/link";
+import { FC } from "react";
 import { notFound } from "next/navigation";
-import { Box, Container, Typography } from "@mui/material";
+import { MdArrowBack } from "react-icons/md";
+import projects from "../../../lib/projects";
 
 interface Props {
   params: { slug: string };
 }
 
-const Page: FC<Props> = ({ params: { slug } }) => {
-  const activeProject = useMemo(
-    () => projects.find((project) => project.path === slug),
-    [slug]
-  );
+const findProject = (slug: string) =>
+  projects.find((project) => project.path === slug);
 
-  if (!activeProject) {
+export const generateStaticParams = () =>
+  projects
+    .filter((project) => project.privacy && project.terms)
+    .map((project) => ({ slug: project.path }));
+
+export const generateMetadata = ({ params: { slug } }: Props): Metadata => {
+  const project = findProject(slug);
+  if (!project) return {};
+
+  return {
+    title: `${project.name} privacy policy & terms`,
+  };
+};
+
+const Page: FC<Props> = ({ params: { slug } }) => {
+  const activeProject = findProject(slug);
+
+  if (!activeProject || !activeProject.privacy || !activeProject.terms) {
     notFound();
   }
 
-  if (!activeProject.privacy || !activeProject.terms)
-    throw new Error("Page Not Found");
+  return (
+    <article className="section legal" style={{ paddingTop: "2.5rem" }}>
+      <div className="container container--narrow">
+        <Link href={`/project/${activeProject.path}`} className="back-link">
+          <MdArrowBack size={16} />
+          {activeProject.name}
+        </Link>
 
-  const renderPrivacy = () => {
-    if (activeProject.privacy) {
-      return (
-        <Container maxWidth="md">
-          <Typography
-            style={{ fontWeight: "bold" }}
-            color="textPrimary"
-            variant="h5"
-          >
-            Privacy Policy:
-          </Typography>
+        <h1>{activeProject.name}</h1>
 
-          <Box m="1rem" />
-
-          {activeProject.privacy.map((paragraph: string) => (
-            <div key={paragraph}>
-              <Typography color="textPrimary" variant="body1">
-                {paragraph}
-              </Typography>
-              <Box m="1rem" />
-            </div>
+        <div className="prose">
+          <h2>Privacy Policy</h2>
+          {activeProject.privacy.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
           ))}
-        </Container>
-      );
-    }
 
-    return null;
-  };
-
-  const renderTerms = () => {
-    if (activeProject.terms) {
-      return (
-        <Container maxWidth="md">
-          <Typography
-            style={{ fontWeight: "bold" }}
-            color="textPrimary"
-            variant="h5"
-          >
-            Terms of Service:
-          </Typography>
-
-          <Box m="1rem" />
-
+          <h2>Terms of Service</h2>
           {activeProject.terms.map((term) => (
             <div key={term.content}>
-              <div>
-                <Typography
-                  style={{ fontWeight: "bold" }}
-                  color="textPrimary"
-                  variant="body1"
-                >
-                  {term.title}
-                </Typography>
-                <Box m="0.5rem" />
-
-                <Typography color="textPrimary" variant="body1">
-                  {term.content}
-                </Typography>
-                <Box m="1rem" />
-              </div>
+              <h3>{term.title}</h3>
+              <p>{term.content}</p>
             </div>
           ))}
-        </Container>
-      );
-    }
-
-    return null;
-  };
-
-  return (
-    <Box style={{ padding: "2rem" }}>
-      <Typography color="textPrimary" align="center" variant="h3">
-        {activeProject.name}
-      </Typography>
-
-      <Box m="1rem" />
-
-      {renderPrivacy()}
-
-      {renderTerms()}
-    </Box>
+        </div>
+      </div>
+    </article>
   );
 };
 

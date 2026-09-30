@@ -1,185 +1,182 @@
+import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
-import { Box, Container, Link, Typography } from "@mui/material";
-import { Project } from "../lib/projects";
-import StoreIcon from "./StoreIcon";
-import { palette } from "../lib/palette";
+import { FaApple, FaGooglePlay } from "react-icons/fa6";
+import { MdArrowBack, MdArrowOutward, MdLanguage } from "react-icons/md";
+import projects, { Project } from "../lib/projects";
 
 interface Props {
   project: Project;
 }
 
+const categoryLabels: Record<Project["categories"][number], string> = {
+  Native: "Mobile",
+  Web: "Web",
+  Hardware: "Hardware",
+};
+
 const ProjectDetails: FC<Props> = ({ project }) => {
-  const renderLinks = () => {
-    if (project.links) {
-      return (
-        <>
-          <Box m="1rem" />
+  const index = projects.findIndex(({ path }) => path === project.path);
+  const previous = index > 0 ? projects[index - 1] : null;
+  const next = index < projects.length - 1 ? projects[index + 1] : null;
 
-          <Typography color="textPrimary" variant="h5" fontWeight="bold">
-            Links:
-          </Typography>
-
-          {project.links.map((link) => (
-            <div key={link.name}>
-              <Box m="1rem" />
-              <Typography color="textPrimary" variant="body1" fontWeight="bold">
-                {link.name}:{" "}
-                <Link
-                  style={{ wordWrap: "break-word", fontWeight: "normal" }}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  color="textSecondary"
-                  href={link.link}
-                >
-                  {link.link}
-                </Link>
-              </Typography>
-            </div>
-          ))}
-        </>
-      );
-    }
-  };
-
-  const renderTechnologiesUsed = () => {
-    if (project.technologies) {
-      return (
-        <>
-          <Box m="2rem" />
-
-          <Box style={{ display: "flex", flexDirection: "column" }}>
-            <Typography color="textPrimary" variant="h5" fontWeight="bold">
-              Technologies used:
-            </Typography>
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                flexWrap: "wrap",
-              }}
-            >
-              {project.technologies.map((technology, index: number) => (
-                <Typography key={technology.name}>
-                  <Link
-                    style={{ marginRight: 5 }}
-                    color="textSecondary"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={technology.link}
-                  >
-                    {technology.name}
-                    {index !== project.technologies!.length - 1 ? ", " : ""}
-                  </Link>
-                </Typography>
-              ))}
-            </div>
-          </Box>
-        </>
-      );
-    }
-  };
-
-  const renderAppBadges = () => {
-    if (project.appStoreUrl || project.playStoreUrl || project.webAppUrl)
-      return (
-        <>
-          <Box m="2rem" />
-
-          <Box
-            display="flex"
-            flexDirection="row"
-            flexWrap="wrap"
-            alignItems="center"
-            justifyContent="center"
-          >
-            {project.playStoreUrl ? (
-              <Link
-                rel="noopener noreferrer"
-                target="_blank"
-                href={project.playStoreUrl}
-              >
-                <StoreIcon
-                  src="/img/badges/google-play-badge.png"
-                  alt="Play Store Link"
-                />
-              </Link>
-            ) : null}
-
-            {project.appStoreUrl ? (
-              <Link
-                rel="noopener noreferrer"
-                target="_blank"
-                href={project.appStoreUrl}
-              >
-                <StoreIcon
-                  src="/img/badges/app-store-badge.svg"
-                  alt="App Store Link"
-                />
-              </Link>
-            ) : null}
-
-            {project.webAppUrl ? (
-              <Link
-                rel="noopener noreferrer"
-                target="_blank"
-                href={project.webAppUrl}
-              >
-                <StoreIcon
-                  src="/img/badges/web-app-badge.png"
-                  alt="Web App Link"
-                />
-              </Link>
-            ) : null}
-          </Box>
-        </>
-      );
-  };
+  const hasActions =
+    project.appStoreUrl || project.playStoreUrl || project.webAppUrl;
 
   return (
-    <Box style={{ padding: "2rem" }}>
-      <Typography color="textPrimary" align="center" variant="h3">
-        {project.name}
-      </Typography>
+    <article className="section" style={{ paddingTop: "2.5rem" }}>
+      <div className="container">
+        <Link href="/#projects" className="back-link">
+          <MdArrowBack size={16} />
+          All projects
+        </Link>
 
-      <Box m="0.5rem" />
-
-      <Typography color="textSecondary" align="center" variant="h5">
-        {project.date}
-      </Typography>
-
-      <Box m="1rem" />
-
-      <img
-        src={project.imgUrl}
-        alt="Project Image"
-        style={{
-          width: "75%",
-          maxWidth: 400,
-          borderRadius: "18.75%",
-          display: "block",
-          marginLeft: "auto",
-          marginRight: "auto",
-          border: `1px solid ${palette.text?.primary}`,
-        }}
-      />
-
-      <Box m="2rem" />
-
-      <Container maxWidth="md">
-        {project.description.map((paragraph: string) => (
-          <div key={paragraph}>
-            <Typography color="textPrimary" variant="body1">
-              {paragraph}
-            </Typography>
-            <Box m="1rem" />
+        <header className="project-hero">
+          <Image
+            className="app-icon project-hero__icon"
+            src={project.imgUrl}
+            alt={`${project.name} icon`}
+            width={280}
+            height={280}
+            priority
+          />
+          <div>
+            {project.role ? (
+              <p className="project-hero__role">{project.role}</p>
+            ) : null}
+            <h1 className="project-hero__title">{project.name}</h1>
+            <p className="project-hero__subtitle">{project.subtitle}</p>
+            <div className="project-hero__meta">
+              <span className="tag">{project.date}</span>
+              {project.categories.map((category) => (
+                <span key={category} className="tag">
+                  {categoryLabels[category]}
+                </span>
+              ))}
+            </div>
           </div>
-        ))}
-        {renderLinks()}
-        {renderTechnologiesUsed()}
-        {renderAppBadges()}
-      </Container>
-    </Box>
+        </header>
+
+        {hasActions ? (
+          <div className="project-actions">
+            {project.appStoreUrl ? (
+              <a
+                href={project.appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button--primary"
+              >
+                <FaApple size={18} />
+                App Store
+              </a>
+            ) : null}
+            {project.playStoreUrl ? (
+              <a
+                href={project.playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`button${
+                  project.appStoreUrl ? "" : " button--primary"
+                }`}
+              >
+                <FaGooglePlay size={15} />
+                Google Play
+              </a>
+            ) : null}
+            {project.webAppUrl ? (
+              <a
+                href={project.webAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`button${
+                  project.appStoreUrl || project.playStoreUrl
+                    ? ""
+                    : " button--primary"
+                }`}
+              >
+                <MdLanguage size={18} />
+                Open web app
+              </a>
+            ) : null}
+          </div>
+        ) : null}
+
+        <div className="project-layout">
+          <div className="prose">
+            {project.description.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+
+          <aside className="sidebar">
+            {project.technologies ? (
+              <div>
+                <h2 className="sidebar__title">Built with</h2>
+                <div className="sidebar__tags">
+                  {project.technologies.map((technology) => (
+                    <a
+                      key={technology.name}
+                      href={technology.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="tag"
+                    >
+                      {technology.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            {project.links || project.privacy ? (
+              <div>
+                <h2 className="sidebar__title">Links</h2>
+                <ul className="link-list">
+                  {project.links?.map((link) => (
+                    <li key={link.link}>
+                      <a
+                        href={link.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.name}
+                        <MdArrowOutward size={16} />
+                      </a>
+                    </li>
+                  ))}
+                  {project.privacy ? (
+                    <li>
+                      <Link href={`/privacy/${project.path}`}>
+                        Privacy policy & terms
+                        <MdArrowOutward size={16} />
+                      </Link>
+                    </li>
+                  ) : null}
+                </ul>
+              </div>
+            ) : null}
+          </aside>
+        </div>
+
+        <nav className="project-nav" aria-label="More projects">
+          {previous ? (
+            <Link href={`/project/${previous.path}`}>
+              <span className="project-nav__label">← Previous</span>
+              <span className="project-nav__name">{previous.name}</span>
+            </Link>
+          ) : null}
+          {next ? (
+            <Link
+              href={`/project/${next.path}`}
+              className="project-nav__next"
+            >
+              <span className="project-nav__label">Next →</span>
+              <span className="project-nav__name">{next.name}</span>
+            </Link>
+          ) : null}
+        </nav>
+      </div>
+    </article>
   );
 };
 
