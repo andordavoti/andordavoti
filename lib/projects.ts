@@ -11,6 +11,8 @@ export interface Project {
   webAppUrl: null | string;
   links: null | Link[];
   technologies: null | Link[];
+  role?: string;
+  featured?: boolean;
   privacy?: string[];
   terms?: TermsType[];
 }
@@ -23,6 +25,9 @@ interface Link {
 }
 
 type URLPath =
+  | "sanser"
+  | "ovio"
+  | "ice"
   | "teardown-trivia"
   | "smart-water-control"
   | "frid"
@@ -53,10 +58,79 @@ type TermsType = {
 
 const projects: Project[] = [
   {
+    path: "sanser",
+    date: "2025 - Present",
+    name: "Sanser",
+    subtitle: "Personal coach for stress relief, sleep and mental recovery.",
+    role: "Co-founder",
+    featured: true,
+    description: [
+      "Sanser is a hyperpersonal coach for stress relief, better sleep, focus and deep mental recovery. Instead of another big content library to scroll through, you press play and get a short audio session tailored to how you feel right now, your goals, your feedback and the time of day.",
+      "I co-founded Sanser with Anders Sandøy Wiik after our own experiences with stress, mental overload and always feeling “on”. The sessions were developed together with the experienced psychologist Reidar Nævdal, and are designed to calm the nervous system and build mental resilience, even when you only have a few minutes.",
+      "Sanser is published by Davoti Solutions and is available on iOS and Android, free to try for two weeks.",
+    ],
+    categories: ["Native"],
+    imgUrl: "/img/projects/sanser.jpg",
+    appStoreUrl: "https://apps.apple.com/app/id6746755556",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.elevate.yourself.app",
+    webAppUrl: null,
+    links: [
+      {
+        name: "Landing Page",
+        link: "https://sanser.app",
+      },
+      {
+        name: "Launch announcement",
+        link: "https://davotisolutions.com/blog/sanser-launch",
+      },
+    ],
+    technologies: [
+      {
+        name: "React Native",
+        link: "https://reactnative.dev",
+      },
+      {
+        name: "Expo",
+        link: "https://expo.dev",
+      },
+      {
+        name: "Typescript",
+        link: "https://www.typescriptlang.org",
+      },
+      {
+        name: "Next.js",
+        link: "https://nextjs.org",
+      },
+      {
+        name: "Supabase",
+        link: "https://supabase.com",
+      },
+      {
+        name: "Postgres",
+        link: "https://www.postgresql.org",
+      },
+      {
+        name: "PostHog",
+        link: "https://posthog.com",
+      },
+      {
+        name: "Loops",
+        link: "https://loops.so",
+      },
+      {
+        name: "Framer",
+        link: "https://www.framer.com",
+      },
+    ],
+  },
+  {
     path: "fast-rhymes",
     date: "2019 - Present",
     name: "Fast Rhymes",
     subtitle: "Tri-platform iOS, Android and web songwriting app.",
+    role: "Founder",
+    featured: true,
     description: [
       "Tri-platform mobile (iOS, Android and web) songwriting app, built using React Native, React Native for Web, Redux, Expo, and Firebase. Find words that rhyme, associations, words with similar meaning, words with similar spelling, definitions, etc. You can sort search results by syllables or sort by the most relevant words.",
       "With an integrated lyrics editor, you can swipe between search and the lyrics you are working on. It was built to be fast and convenient, with a minimalist design to not be in the way of the artists' creative process.",
@@ -235,6 +309,34 @@ const projects: Project[] = [
     ],
   },
   {
+    path: "ovio",
+    date: "2025",
+    name: "Ovio",
+    subtitle: "The modern operating system for driving schools.",
+    description: [
+      "Ovio is the modern operating system for driving schools, built by Infinity Drift. It takes students all the way from their first booking to a passed driving test, with dedicated experiences for administrators, staff, students and parents.",
+      "Through Davoti Solutions I have helped develop the Ovio platform, including booking, scheduling, financial reporting and automated payment follow-up, as well as the new Ovio student app.",
+      "In the student app, students can see their upcoming driving lessons and courses, book and cancel within the school's deadlines, pay for their training, view receipts and fill in their student log. Guardians of students under 18 can follow the training and pay for lessons as well.",
+    ],
+    categories: ["Native", "Web"],
+    imgUrl: "/img/projects/ovio.jpg",
+    appStoreUrl: "https://apps.apple.com/no/app/ovio/id6780833362",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=no.infinitydrift.ovio.minside",
+    webAppUrl: "https://minside.ovio.no",
+    links: [
+      {
+        name: "Infinity Drift",
+        link: "https://www.infinitydrift.no",
+      },
+      {
+        name: "Davoti Solutions",
+        link: "https://davotisolutions.com",
+      },
+    ],
+    technologies: null,
+  },
+  {
     path: "snitt",
     name: "Snitt",
     date: "2020 - Present",
@@ -274,6 +376,71 @@ const projects: Project[] = [
       {
         name: "Typescript",
         link: "https://www.typescriptlang.org",
+      },
+    ],
+  },
+  {
+    path: "ice",
+    date: "2023",
+    name: "Ice",
+    subtitle: "The Ice app and Min Side, serving over a million customers.",
+    description: [
+      "Ice is Norway's challenger mobile operator, part of the Lyse group. Through Davoti Solutions I have worked with Lyse's self-service team on the Ice app and Min Side, the web self-service that over a million mobile customers use to manage their subscriptions.",
+      "Highlights include Vipps login for the app and Min Side, built as a reusable module other teams have since adopted, and SMS login that gives under-15s without BankID or Vipps safe access to a limited version of self-service.",
+      "Other work includes a redesigned eSIM ordering and activation flow, where adding push notifications significantly lifted activation rates, as well as native modules and home screen widgets in Swift and Kotlin.",
+      "Behind the scenes the team works contract-first with types and endpoints generated from OpenAPI, shares UI components between mobile and web, syncs design tokens from Figma, and ships through automated build, test and release pipelines with Expo Application Services and Maestro.",
+    ],
+    categories: ["Native", "Web"],
+    imgUrl: "/img/projects/ice.jpg",
+    appStoreUrl: "https://apps.apple.com/no/app/ice/id1318207677",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=no.ice.app",
+    webAppUrl: "https://minside.ice.no",
+    links: [
+      {
+        name: "Ice",
+        link: "https://www.ice.no",
+      },
+      {
+        name: "Lyse",
+        link: "https://www.lyse.no",
+      },
+      {
+        name: "Davoti Solutions",
+        link: "https://davotisolutions.com",
+      },
+    ],
+    technologies: [
+      {
+        name: "React Native",
+        link: "https://reactnative.dev",
+      },
+      {
+        name: "Expo",
+        link: "https://expo.dev",
+      },
+      {
+        name: "Typescript",
+        link: "https://www.typescriptlang.org",
+      },
+      {
+        name: "Swift",
+        link: "https://www.swift.org",
+      },
+      {
+        name: "Kotlin",
+        link: "https://kotlinlang.org",
+      },
+      {
+        name: "Sanity",
+        link: "https://www.sanity.io",
+      },
+      {
+        name: "OpenAPI",
+        link: "https://www.openapis.org",
+      },
+      {
+        name: "Maestro",
+        link: "https://maestro.mobile.dev",
       },
     ],
   },
@@ -393,7 +560,7 @@ const projects: Project[] = [
     subtitle: "This website.",
     description: [
       "One central place for all of my past and present projects. The first version of this website was built with Typescript, React and Material UI. The project was then utilizing Preact in production to keep the bundle size small.",
-      "Since then it's been rewritten with Next.js and React. The website is hosted on Vercel, and the source code is available on GitHub.",
+      "Since then it's been rewritten with Next.js and React, and in 2026 it got a facelift with a lightweight, custom design built from scratch in plain CSS. The website is hosted on Vercel, and the source code is available on GitHub.",
     ],
     categories: ["Web"],
     imgUrl: "/img/projects/personal-website.jpg",
@@ -424,18 +591,16 @@ const projects: Project[] = [
         link: "https://nextjs.org/",
       },
       {
-        name: "Preact",
-        link: "https://preactjs.com/",
-      },
-
-      {
         name: "Typescript",
         link: "https://www.typescriptlang.org/",
       },
-
       {
-        name: "Material UI",
-        link: "https://material-ui.com/",
+        name: "Framer Motion",
+        link: "https://motion.dev/",
+      },
+      {
+        name: "Vercel",
+        link: "https://vercel.com/",
       },
     ],
   },

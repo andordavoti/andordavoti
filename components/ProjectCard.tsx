@@ -1,80 +1,27 @@
-import React from "react";
-import { Box, Typography, Card } from "@mui/material";
-import { Project } from "../lib/projects";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { palette } from "../lib/palette";
+import Link from "next/link";
+import { FC } from "react";
+import { Project } from "../lib/projects";
 
 type Props = Pick<Project, "path" | "date" | "name" | "imgUrl" | "subtitle">;
 
-const ProjectCard: React.FC<Props> = ({
-  path,
-  name,
-  subtitle,
-  date,
-  imgUrl,
-}) => {
-  const router = useRouter();
-  return (
-    <Card
-      className="scale-on-hover"
-      variant="outlined"
-      onClick={() => router.push(`project/${path}`)}
-      style={{
-        width: 300,
-        height: "auto",
-        backgroundColor: "#242526",
-        borderRadius: "1rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        padding: "1.5rem",
-        boxShadow: "0",
-        margin: "1rem",
-        cursor: "pointer",
-      }}
-    >
-      <Typography
-        color="textPrimary"
-        align="center"
-        variant="h5"
-        fontWeight="500"
-      >
-        {name}
-      </Typography>
-
-      <Box m="0.25rem" />
-
-      <Typography color="textPrimary" variant="body2" textAlign="center">
-        {subtitle}
-      </Typography>
-
-      <Box m="0.25rem" />
-
-      <Typography
-        color="textPrimary"
-        align="center"
-        variant="body2"
-        fontStyle="italic"
-      >
-        {date}
-      </Typography>
-
-      <Box m="0.5rem" />
-
-      <Image
-        width={250}
-        height={250}
-        src={imgUrl}
-        alt={name}
-        style={{
-          borderRadius: "18.75%",
-          border: `0.1px solid ${palette.text?.primary}`,
-        }}
-      />
-    </Card>
-  );
-};
+const ProjectCard: FC<Props> = ({ path, name, subtitle, date, imgUrl }) => (
+  <Link href={`/project/${path}`} className="project-card">
+    <Image
+      className="app-icon"
+      src={imgUrl}
+      alt=""
+      width={56}
+      height={56}
+    />
+    <div className="project-card__body">
+      <div className="project-card__header">
+        <h3 className="project-card__name">{name}</h3>
+        <span className="project-card__date">{date}</span>
+      </div>
+      <p className="project-card__subtitle">{subtitle}</p>
+    </div>
+  </Link>
+);
 
 export default ProjectCard;

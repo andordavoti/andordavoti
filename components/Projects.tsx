@@ -1,115 +1,109 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import {
-  Typography,
-  Container,
-  Grid,
-  Box,
-  Button,
-  ButtonGroup,
-} from "@mui/material";
-import { motion } from "framer-motion";
+import { FC, useMemo, useState } from "react";
+import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import projects, { ProjectCategory } from "../lib/projects";
 import ProjectCard from "./ProjectCard";
 
-const Projects: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<"All" | ProjectCategory>(
-    "All"
+type Filter = "All" | ProjectCategory;
+
+const categories: Filter[] = ["All", "Native", "Web", "Hardware"];
+
+const labels: Record<Filter, string> = {
+  All: "All",
+  Native: "Mobile",
+  Web: "Web",
+  Hardware: "Hardware",
+};
+
+const countFor = (category: Filter) =>
+  category === "All"
+    ? projects.length
+    : projects.filter((project) => project.categories.includes(category))
+        .length;
+
+const Projects: FC = () => {
+  const [activeCategory, setActiveCategory] = useState<Filter>("All");
+
+  const activeProjects = useMemo(
+    () =>
+      activeCategory === "All"
+        ? projects
+        : projects.filter((project) =>
+            project.categories.includes(activeCategory)
+          ),
+    [activeCategory]
   );
-  const [activeProjects, setActiveProjects] = useState(projects);
-
-  useEffect(() => {
-    filterProjects(activeCategory);
-  }, [activeCategory]);
-
-  const filterProjects = (category: "All" | ProjectCategory) => {
-    if (category === "All") {
-      setActiveProjects(projects);
-    } else {
-      const filteredProjects = projects.filter((project) =>
-        project.categories.includes(category)
-      );
-      setActiveProjects(filteredProjects);
-    }
-  };
-
-  const categories: ("All" | ProjectCategory)[] = [
-    "All",
-    "Native",
-    "Web",
-    "Hardware",
-  ];
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      paddingTop="2rem"
-    >
-      <Typography
-        color="textPrimary"
-        align="center"
-        variant="h4"
-        fontWeight="500"
-      >
-        Projects
-      </Typography>
+    <section id="projects" className="section">
+      <div className="container">
+        <div className="section-header">
+          <div>
+            <span className="eyebrow">Archive</span>
+            <h2 className="section-title">
+              All <span className="serif">projects</span>
+            </h2>
+          </div>
 
-      <Box m="0.5rem" />
+          <LayoutGroup id="filters">
+            <div className="filters" role="group" aria-label="Filter projects">
+              {categories.map((category) => {
+                const isActive = category === activeCategory;
+                return (
+                  <button
+                    key={category}
+                    type="button"
+                    className="filters__button"
+                    aria-pressed={isActive}
+                    onClick={() => setActiveCategory(category)}
+                  >
+                    {isActive ? (
+                      <motion.span
+                        layoutId="filter-pill"
+                        className="filters__pill"
+                        transition={{
+                          type: "spring",
+                          stiffness: 500,
+                          damping: 40,
+                        }}
+                      />
+                    ) : null}
+                    <span className="filters__label">{labels[category]}</span>
+                    <span className="filters__count">
+                      {countFor(category)}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </LayoutGroup>
+        </div>
 
-      <ButtonGroup
-        style={{ flexWrap: "wrap", justifyContent: "center" }}
-        variant="text"
-        color="secondary"
-        aria-label="text primary button group"
-      >
-        {categories.map((category, index) => (
-          <Button
-            variant={category === activeCategory ? "contained" : "outlined"}
-            key={index}
-            onClick={() => setActiveCategory(category)}
-            style={{
-              borderTopLeftRadius: index === 0 ? "1rem" : "0rem",
-              borderBottomLeftRadius: index === 0 ? "1rem" : "0rem",
-              borderTopRightRadius:
-                index === categories.length - 1 ? "1rem" : "0rem",
-              borderBottomRightRadius:
-                index === categories.length - 1 ? "1rem" : "0rem",
-              textTransform: "none",
-            }}
-          >
-            {category}
-          </Button>
-        ))}
-      </ButtonGroup>
-
-      <Box m="0.5rem" />
-
-      <Container maxWidth="lg">
-        <Grid
-          container
-          display="flex"
-          flexDirection="row"
-          alignItems="center"
-          justifyContent="center"
-        >
-          {activeProjects.map(({ path, name, subtitle, date, imgUrl }) => (
-            <motion.div layout key={name}>
-              <ProjectCard
-                path={path}
-                name={name}
-                subtitle={subtitle}
-                date={date}
-                imgUrl={imgUrl}
-              />
-            </motion.div>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
+        <motion.div layout className="project-grid">
+          <AnimatePresence mode="popLayout" initial={false}>
+            {activeProjects.map(({ path, name, subtitle, date, imgUrl }) => (
+              <motion.div
+                layout
+                key={path}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <ProjectCard
+                  path={path}
+                  name={name}
+                  subtitle={subtitle}
+                  date={date}
+                  imgUrl={imgUrl}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
